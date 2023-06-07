@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h3 class="bold">{{ CodeTag }}</h3>
+        <h3 class="bold pl-5">{{ CodeTag }}</h3>
     </div>
 </template>
 <script>

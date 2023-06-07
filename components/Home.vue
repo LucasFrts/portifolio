@@ -2,15 +2,15 @@
     <div>
         <NavTab/>
         <StyledContainer class="nav-compense">
-            <CodeTag/>
+            <ApresentationCard/>
         </StyledContainer>
     </div>
 </template>
 <script>
-import StyledContainer from './StyledContainer.vue';
+import ApresentationCard from './ApresentationCard.vue';
 export default {
     components:{
-        StyledContainer
+        ApresentationCard
     }
 }
 </script>
