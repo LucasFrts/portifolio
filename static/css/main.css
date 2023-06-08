@@ -6,3 +6,10 @@
 *{
     font-family:'Geologica', sans-serif;
 }
+.bold{
+    font-weight: bold;
+}
+.sublinhado{
+    width: fit-content;
+    border-bottom: 1px solid white;
+}
