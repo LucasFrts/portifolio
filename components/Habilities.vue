@@ -1,8 +1,10 @@
 <template>
     <div class="pt-5">
-        <h4 class="text-light bold sublinhado">O que posso entregar:</h4>
+        <LeftTransition id="habilities-text" scrolHeight="100">
+            <h4 class="text-light bold sublinhado">O que posso entregar: </h4>
+        </LeftTransition>
         <div class="d-flex justify-content-center gap-30 pt-5 row">
-            <HabilitiesCard class="col col-md-3 col-12" v-for="({title, content, icon}, index) in habilities" :key="index" :title="title" :content="content">
+            <HabilitiesCard :id="`card-row-${index + 1}`" :ms="ms" class="col col-md-3 col-12" v-for="({title, content, icon, ms}, index) in habilities" :key="index" :title="title" :content="content">
                 <template v-slot:title>
                     {{ title }}
                 </template>
@@ -17,10 +19,12 @@
     </div>
 </template>
 <script>
+import LeftTransition from './LeftTransition.vue';
 import HabilitiesCard from './HabilitiesCard.vue';
 export default {
     components:{
-        HabilitiesCard
+        HabilitiesCard,
+        LeftTransition
     },
     data(){
         return{
@@ -28,21 +32,25 @@ export default {
                 {
                     title:"APLICAÇÕES FRONTEND",
                     icon:"desktop",
-                    content:"<ul><li>Desenvolvimento de lading pages</li><li>Sistemas web</li><li>e Consumo de API's.</li></ul>"
+                    content:"<ul><li>Desenvolvimento de lading pages</li><li>Sistemas web</li><li>e Consumo de API's.</li></ul>",
+                    ms: 200
                 },
                 {
                     title:"APLICAÇÕES BACKEND",
                     icon:"code",
-                    content:"<ul><li>Desenvolvimento de API's</li><li>Regras de negócios</li><li>e Estruturação de bancos de dados.</li></ul>"
+                    content:"<ul><li>Desenvolvimento de API's</li><li>Regras de negócios</li><li>e Estruturação de bancos de dados.</li></ul>",
+                    ms: 400
                 },
                 {
                     title:"APLICAÇÕES MOBILE/DESKTOP",
                     icon:"mobile-screen",
-                    content:"<ul><li>Aplicações mobile com Flutter</li><li>e Aplicações desktop com Java Swing.</li></ul>"
+                    content:"<ul><li>Aplicações mobile com Flutter</li><li>e Aplicações desktop com Java Swing.</li></ul>",
+                    ms: 600
                 }
             ]
         }
-    }
+    },
+
     
 }
 </script>
@@ -53,5 +61,10 @@ export default {
 .icon{
     font-size: 3rem;
 }
-
+.hide-text{
+    margin-left: -100%;
+}
+.hide-cards{
+    margin-top:100%
+}
 </style>

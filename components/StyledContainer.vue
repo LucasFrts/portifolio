@@ -41,7 +41,7 @@ export default {
     min-height: 100vh;
     padding: 0rem 8rem;
 }
-@media(max-width: 660px){
+@media(max-width: 990px){
     .container-adjusted{
     min-height: 100vh;
     padding: 0rem 2rem;

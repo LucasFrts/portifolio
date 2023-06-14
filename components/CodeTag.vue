@@ -17,4 +17,9 @@ export default {
     font-weight: bolder;
     color:#fff;
 }
+@media(max-width:330px){
+    h3{
+    display: none; 
+    }
+}
 </style>

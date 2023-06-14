@@ -1,30 +1,40 @@
 <template>
-    <div class="row mb-5 pb-5">
+    <div class="row mb-5 pb-5 pt-5 mt-5">
         <div class="d-md-flex d-none align-items-center col col-md-6 col-12">
-            <div class="d-flex align-items-start flex-column bolder text-white">
-                <div class="d-flex apresentation weak-white">
-                    <h5 class="f-15rem">OI</h5><img src="images/hi.gif" class="gif" alt="gif animado"><h5 class="f-15rem">, EU SOU O LUCAS!</h5>
+            <div class="w-100 bolder text-white">
+                <div class="w-100 apresentation text-blue f-15rem">
+                        OI<img src="images/hi.gif" class="gif" alt="gif animado">, EU SOU O <span class="text-white">LUCAS!</span>
                 </div>
-                <h1 class="f-5rem">FULLSTACK</h1>
-                <h1 class="f-5rem">DEVELOPER</h1>
+                <div class="w-100 text-ligth f-5rem">
+                    <div class="w-100">
+                        FULLSTACK
+                    </div>
+                    <div class="w-100">
+                        DEVELOPER
+                    </div>
+                </div>
                 <div class="d-flex justify-content-between pt-3 w-100 gap-30">
                     <b-button class="flex-grow" variant="light">COMEÇAR</b-button>
-                    <b-button class="flex-grow" variant="dark">CONTATE-ME</b-button>
+                    <b-button class="flex-grow btn-blue">CONTATE-ME</b-button>
                 </div>
             </div>
         </div>
         <div class="col col-12 d-md-none d-sm-block order-2">
-            <div class="d-flex align-items-start flex-column bolder text-white">
-                <div class="d-flex apresentation weak-white">
-                    <h5 class="f-15rem">OI</h5><img src="images/hi.gif" class="gif" alt="gif animado"><h5 class="f-15rem">, EU SOU O LUCAS!</h5>
+            <div class="w-100 bolder text-white">
+                <div class="w-100 apresentation text-blue f-15rem">
+                        OI<img src="images/hi.gif" class="gif" alt="gif animado">, EU SOU O <span class="text-blue">LUCAS</span>!
                 </div>
-                <div class="d-flex flex-column text-ligth">
-                    <h1 class="f-5rem">FULLSTACK</h1>
-                    <h1 class="f-5rem">DEVELOPER</h1>
+                <div class="w-100 text-ligth f-5rem">
+                    <div class="w-100">
+                        FULLSTACK
+                    </div>
+                    <div class="w-100">
+                        DEVELOPER
+                    </div>
                 </div>
                 <div class="d-flex justify-content-between pt-3 w-100 gap-30">
                     <b-button class="flex-grow" variant="light">COMEÇAR</b-button>
-                    <b-button class="flex-grow" variant="dark">CONTATE-ME</b-button>
+                    <b-button class="flex-grow btn-blue">CONTATE-ME</b-button>
                 </div>
             </div>
         </div>
@@ -54,11 +64,11 @@ export default {
     font-weight: bolder;
 }
 .f-15rem{
-    font-size: 1.5rem;
+    font-size: 2.5vw;
 }
 .f-5rem{
-    font-size: 5rem;
-    line-height: 4rem;
+    font-size: 7vw;
+    line-height: 6vw;
     margin: 0 !important;
 }
 img{
@@ -74,19 +84,41 @@ img{
     color:  #ffffffa6;
 }
 .gif{
-    height: 56px;
+    height: 2rem;
 }
-@media (max-width:576px){
+.text-blue{
+    color: #034f77 !important;
+}
+.btn-blue{
+    background-color: #034f77 !important;
+    color:#fff !important;
+    border: 1px solid #034f77;
+
+}
+@media (max-width:660px){
     .gif{
-        height: 1.5rem;
+        height: 6vw;
     }
     .f-15rem{
-        font-size: 1rem;
+        font-size: 6vw;
     }
     .f-5rem{
-        font-size: 2.5rem;
-        line-height: 2.5rem;
+        font-size: 15vw;
+        line-height: 12vw;
         margin: 0 !important;
     }
+}
+@media(min-width:660px) and (max-width:767px){
+    .f-15rem{
+    font-size: 4vw;
+    }
+    .f-5rem{
+        font-size: 15vw;
+        line-height: 12vw;
+        margin: 0 !important;
+    }
+.gif{
+    height: 3rem;
+}
 }
 </style>
