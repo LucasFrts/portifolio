@@ -3,6 +3,7 @@
         <NavTab/>
         <StyledContainer class="nav-compense">
             <ApresentationCard/>
+            <Projetos/>
             <AboutMe/>
         </StyledContainer>
     </div>

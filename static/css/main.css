@@ -13,3 +13,10 @@
     width: fit-content;
     border-bottom: 1px solid white;
 }
+.card{
+    background-color: #fff;
+    color:#034f77;;
+}
+.card-header{
+    background-color: transparent;
+}
