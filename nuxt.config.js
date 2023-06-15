@@ -52,7 +52,7 @@ export default {
   build: {
   },
   router:{
-    extendRoutes(routes, resolve) {
+    extendRoutes(routes) {
       routes.push({
         path: '*',
         redirect: '/404',
