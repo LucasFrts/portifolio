@@ -4,7 +4,8 @@
             <h4 class="text-light bold sublinhado">O que posso entregar: </h4>
         </LeftTransition>
         <div class="d-flex justify-content-center gap-30 pt-5 row">
-            <HabilitiesCard :id="`card-row-${index + 1}`" :ms="ms" class="col col-md-3 col-12" v-for="({title, content, icon, ms}, index) in habilities" :key="index" :title="title" :content="content">
+            <TopTransition :id="`card-row-${index + 1}`" :ms="ms" v-for="({title, content, icon, ms}, index) in habilities" :key="index" class="col col-md-3 col-12">
+                <HabilitiesCard  class="w-100" >
                 <template v-slot:title>
                     {{ title }}
                 </template>
@@ -15,16 +16,19 @@
                     </div>
                 </template>
             </HabilitiesCard>
+            </TopTransition>
         </div>    
     </div>
 </template>
 <script>
 import LeftTransition from './LeftTransition.vue';
 import HabilitiesCard from './HabilitiesCard.vue';
+import TopTransition from './TopTransition.vue';
 export default {
     components:{
         HabilitiesCard,
-        LeftTransition
+        LeftTransition,
+        TopTransition
     },
     data(){
         return{
@@ -42,7 +46,7 @@ export default {
                     ms: 400
                 },
                 {
-                    title:"APLICAÇÕES MOBILE/DESKTOP",
+                    title:"MOBILE/DESKTOP",
                     icon:"mobile-screen",
                     content:"<ul><li>Aplicações mobile com Flutter</li><li>e Aplicações desktop com Java Swing.</li></ul>",
                     ms: 600

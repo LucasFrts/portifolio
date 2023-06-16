@@ -20,3 +20,15 @@
 .card-header{
     background-color: transparent;
 }
+.col{
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left:0px;
+    padding-right:0px;
+}
+.opa{
+    transition:.5s ease;
+}
+.hide-cards{
+    margin-top:100%
+}

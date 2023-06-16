@@ -21,21 +21,26 @@ export default {
             default:0
         }
     },
-    mounted(){
-        window.addEventListener('scroll', () => {
+    methods:{
+        scrollEvent(){
             const text = this.$refs[this.id];
             const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;     
           if (scrollPosition > this.scrolHeight) { 
-            setTimeout(()=>{
+            if(text.classList.contains('hide-text')){
+                setTimeout(()=>{
                 text.classList.remove('hide-text');
-            }, this.ms)
-          } else {
-            setTimeout(()=>{
-                text.classList.add('hide-text');
-            }, this.ms)
-          }
-        });
+                }, this.ms)
+            }
+          } 
+        }
+    },
+    mounted(){
+        window.addEventListener('scroll', this.scrollEvent);
+    },
+    beforeDestroy(){
+        window.removeEventListener('scroll', this.scrollEvent);
     }
+
 
     
 }
