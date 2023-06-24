@@ -1,8 +1,8 @@
 <template>
-    <div class="gradient-blue">
+    <div class="gradient-blue" id="main-content-container">
         <div class="left-customer-infos">
-            <div class="line-vertical-left d-none d-lg-block"></div>
-            <div class="d-none d-lg-block">
+            <div id="left-top" class="line-vertical-left d-none d-lg-block"></div>
+            <div  id="left-mid" class="d-none d-lg-block">
                 <div class="d-flex flex-column gap">
                     <a href="https://www.linkedin.com/in/freitas-luk18/" target="_blank">
                         <svg class="svg" xmlns="http://www.w3.org/2000/svg" height="2.5rem"
@@ -27,7 +27,7 @@
                     </a>
                 </div>
             </div>
-            <div class="line-vertical-left height-adjusted-left d-none d-lg-block"></div>
+            <div id="left-line" class="line-vertical-left height-adjusted-left d-none d-lg-block"></div>
         </div>
         <div class="container-adjusted">
             <slot>
@@ -35,17 +35,30 @@
             </slot>
         </div>
         <div class="right-customer-infos">
-            <div class="line-vertical-right height-adjusted-right d-none d-md-block"></div>
-            <div class="text-white adjusted-text d-none d-md-block">
-                lucasmatheus.profissional@gmail.com
-            </div>
-            <div class="line-vertical-right d-none d-md-block"></div>
+            <div id="right-line" class="line-vertical-right height-adjusted-right d-none d-md-block"></div>
         </div>
     </div>
 </template>
 <script>
 export default {
-
+    methods:{
+        sideLinesHeigh(){
+            const container = document.getElementById('main-content-container');
+            const left = document.getElementById('left-line')
+            const leftMid = document.getElementById('left-mid')
+            const leftTop = document.getElementById('left-top')
+            
+            const right = document.getElementById('right-line')
+            right.style.minHeight = `${container.clientHeight}px`
+            left.style.minHeight = `${container.clientHeight - leftMid.clientHeight - leftTop.clientHeight}px`
+        }
+    },
+    mounted(){
+        document.addEventListener('scroll', this.sideLinesHeigh)
+    },
+    beforeDestroy(){
+        document.removeEventListener('sideLinesHeigh', this.sideLinesHeigh)
+    }
 }
 </script>
 <style scoped>
@@ -97,7 +110,7 @@ export default {
 }
 
 .line-vertical-right {
-    height: 80vh;
+    height: 100vh;
     width: 3px;
     border-radius: 2px;
     background-color: #fff;
@@ -131,10 +144,8 @@ export default {
     /* Define o ponto de origem da rotação */
 }
 
-.height-adjusted-right {
-    height: 28vh !important;
-}
 
 .height-adjusted-left {
     height: 80vh !important;
+    z-index: 0;
 }</style>

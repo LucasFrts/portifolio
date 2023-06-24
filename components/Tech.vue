@@ -20,6 +20,7 @@ export default {
 <style scoped>
 .card{
     padding: .25rem .5rem;
+    z-index: 99;
 }
 .gap{
     gap:10px;
